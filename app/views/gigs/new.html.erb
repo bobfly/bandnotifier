@@ -3,6 +3,7 @@
   <%= simple_form_for @gig do |f| %>
     <%= f.input :name %>
     <%= f.input :gig_date %>
+    <%= f.input :gig_type, collection: Gig.gig_types.map{|key, value| [key.humanize, key]} %>
     <%= f.input :description %>
     <%= f.input :price %>
     <%= f.input :currency, collection: Gig.currencies.map { |key, value| [key.humanize, key] } %>
