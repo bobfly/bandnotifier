@@ -16,4 +16,27 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require bootstrap-datepicker
 //= require_tree .
+
+
+$(document).ready(function(){
+
+  $.fn.datepicker.dates['hr'] = {
+    days: ["Nedjelja", "Ponedjeljak", "Utorak", "Srijeda", "Cetvrtak", "Petak", "Subota"],
+    daysShort: ["Ned", "Pon", "Uto", "Sri", "Cet", "Pet", "Sub"],
+    daysMin: ["Ne", "Po", "Ut", "Sr", "Ce", "Pe", "Su"],
+    months: ["Sijecanj", "Veljaca", "Ozujak", "Travanj", "Svibanj", "Lipanj", "Srpanj", "Kolovoz", "Rujan", "Listopad", "Studeni", "Prosinac"],
+    monthsShort: ["Sij", "Velj", "Ozu", "Tra", "Svi", "Lip", "Srp", "Kol", "Ruj", "Lis", "Stu", "Pro"],
+    today: "Danas",
+    clear: "ocisti",
+    format: "mm.dd.yyyy",
+    titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+    weekStart: 0
+};
+
+
+  $(".datepicker").datepicker({
+    language: "hr"
+  });
+})

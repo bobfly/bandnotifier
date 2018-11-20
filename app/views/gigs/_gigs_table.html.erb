@@ -1,0 +1,36 @@
+<table class="table table-responsive">
+  <thead>
+    <tr>
+      <th>Datum</th>
+      <th>Naslov</th>
+      <th>Opis</th>
+      <th>Cijena</th>
+      <th>Valuta</th>
+      <th>Javna?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% gigs.each do |gig| %>
+      <tr>
+        <td>
+          <%= gig.gig_date %>
+        </td>
+        <td>
+          <%= gig.name %>
+        </td>
+        <td>
+          <%= gig.description %>
+        </td>
+        <td>
+          <%= gig.price %>
+        </td>
+        <td>
+          <%= gig.currency %>
+        </td>
+        <td>
+          <%= gig.public %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

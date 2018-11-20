@@ -1,0 +1,13 @@
+<div class="col-sm-12">
+  <h1>Nova svirka</h1>  
+  <%= simple_form_for @gig do |f| %>
+    <%= f.input :name %>
+    <%= f.input :gig_date %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :currency, collection: Gig.currencies.map { |key, value| [key.humanize, key] } %>
+    <%= f.input :public %>
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  <% end %>
+</div>
+

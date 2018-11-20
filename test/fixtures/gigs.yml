@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  gig_date: MyString
+  date: MyString
+  description: MyText
+  price: 9.99
+  currency: 1
+  public: false
+
+two:
+  name: MyString
+  gig_date: MyString
+  date: MyString
+  description: MyText
+  price: 9.99
+  currency: 1
+  public: false
