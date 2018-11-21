@@ -1,2 +1,13 @@
-<h1>Reports#index</h1>
-<p>Find me in app/views/reports/index.html.erb</p>
+<div class="col-sm-12">
+  Pregled svirki po parametrima
+  <%= simple_form_for :search,  url: reports_path , :method => :get do |f| %>
+    <%= f.input :gig_type, collection: Gig.gig_types.map{|key, value| [key.humanize, key]} %>
+    <%= f.input :gig_date_greater, as: :date, value: params.dig(:search, :gig_date_greater) %>
+    <%= f.input :gig_date_smaller, as: :date, value: params.dig(:search, :gig_date_smaller) %>
+    <%= f.submit "Search", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div class="col-sm-12">
+  <%= render "/gigs/gigs_table", gigs: @gigs %>
+</div>
