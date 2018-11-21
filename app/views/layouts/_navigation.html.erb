@@ -13,17 +13,23 @@
         <%= link_to "Gigs", gigs_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
+        <%= link_to "Past gigs", past_gigs_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Reports", reports_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
         <% if current_user %>
           <%= link_to "Odjava", destroy_user_session_path, method: :delete, class: "nav-link" %>
         <% else %>
           <%= link_to "Prijava", new_user_session_path, class: "nav-link" %>
         <% end %>
       </li>
+      <li class="nav-item">
+        <%= link_to "Nova svirka", new_gig_path, class: "nav-link" %>
+      </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    
     <ul></ul>
   </div>
 </nav>

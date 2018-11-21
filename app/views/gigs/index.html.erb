@@ -1,10 +1,5 @@
 <div class="col-sm-12">
-  <div class="col-sm-8">
     <h1>Nadolazece Svirke</h1>  
-  </div>
-  <div class="col-sm-4">
-    <%= link_to "Nova svirka", new_gig_path, class: "btn btn-primary" %>
-  </div>
   
   <% if @upcoming_gigs.blank? %>
     <div class="col-sm-12 text-center">
@@ -23,6 +18,8 @@
       <h3>Jos uvijek nista?! zbilja se zajebavate</h3>
     </div>
   <% else %>
-    <%= render "gigs_table", gigs: @upcoming_gigs %>
+    <div class="col-sm-12">
+      <%= render "gigs_table", gigs: @next_gigs %>  
+    </div>
   <% end %>
 </div>

@@ -13,7 +13,7 @@
     <% gigs.each do |gig| %>
       <tr>
         <td>
-          <%= gig.gig_date %>
+          <%= gig.gig_date.strftime("%-d.%-m.%Y.") %>
         </td>
         <td>
           <%= gig.name %>
