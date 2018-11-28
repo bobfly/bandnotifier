@@ -7,6 +7,9 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
+        <%= link_to "Nova svirka", new_gig_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
         <%= link_to "Home", root_path, class: "nav-link active" %>
       </li>
       <li class="nav-item">
@@ -25,9 +28,11 @@
           <%= link_to "Prijava", new_user_session_path, class: "nav-link" %>
         <% end %>
       </li>
-      <li class="nav-item">
-        <%= link_to "Nova svirka", new_gig_path, class: "nav-link" %>
-      </li>
+      <% if current_user %>
+        <li class="nav-item">
+          <%= link_to "Profil", edit_user_registration_path, class: "nav-link" %>
+        </li>
+      <% end %>
     </ul>
     
     <ul></ul>

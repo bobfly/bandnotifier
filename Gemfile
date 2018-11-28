@@ -33,6 +33,7 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'bootstrap-datepicker-rails'
 gem 'chartjs-ror'
+gem 'font-awesome-sass', '~> 5.5.0'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
