@@ -1,5 +1,4 @@
 class GigsController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_gig, only: [:edit, :update, :show, :destroy]
   def index
     @upcoming_gigs = Gig.where("gig_date >= ? and gig_date <= ?", Date.today, Date.today.end_of_year).order(gig_date: :desc)
