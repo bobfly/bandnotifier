@@ -18,3 +18,17 @@ hr:
         price: Cijena
         currency: Valuta
         public: Javna?
+    errors:
+      models:
+        gig:
+          attributes:
+            name:
+              blank: ne moze biti prazan
+            gig_type:
+              blank: ne moze biti prazan
+            price:
+              blank: ne moze biti prazna
+            currency:
+              blank: ne moze biti prazna
+            gig_date:
+              start_date_before_today: ": ne postoji svirka u proslosti, promijeni datum"
