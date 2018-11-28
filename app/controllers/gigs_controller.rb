@@ -16,6 +16,9 @@ class GigsController < ApplicationController
   def create
     @gig = Gig.new(gig_params)
     if @gig.save
+      User.all.each do |user|
+        GigMailer.upcoming_gig(@gig, user.email).deliver_later
+      end
       redirect_to gigs_path
     else
       render :new
