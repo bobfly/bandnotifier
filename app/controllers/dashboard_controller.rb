@@ -8,6 +8,6 @@ class DashboardController < ApplicationController
                {author: "Necastivi", title: "Necete vjerovat sta mi se desilo"}
       ]
     @quote = @quotes.sample
-    @upcoming_gigs = Gig.where("gig_date >= ? and gig_date <= ?", Date.today, Date.today.end_of_year).order(gig_date: :desc)
+    @upcoming_gigs = Gig.where("gig_date >= ? and gig_date <= ?", Date.today, Date.today.end_of_year).order(gig_date: :asc)
   end
 end

@@ -11,3 +11,9 @@ hr:
     attributes:
       gig:
         name: Naziv
+        gig_date: Datum
+        gig_type: Tip Svirke
+        description: Opis
+        price: Cijena
+        currency: Valuta
+        public: Javna?

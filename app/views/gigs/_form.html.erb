@@ -1,10 +1,10 @@
 <%= simple_form_for @gig do |f| %>
   <%= f.input :name, label: Gig.human_attribute_name(:name) %>
-  <%= f.input :gig_date %>
-  <%= f.input :gig_type, collection: Gig.gig_types.map{|key, value| [key.humanize, key]} %>
-  <%= f.input :description %>
-  <%= f.input :price %>
-  <%= f.input :currency, collection: Gig.currencies.map { |key, value| [key.humanize, key] } %>
-  <%= f.input :public %>
-  <%= f.submit "Save", class: "btn btn-primary" %>
+  <%= f.input :gig_date, label: Gig.human_attribute_name(:gig_date) %>
+  <%= f.input :gig_type, collection: Gig.gig_types.map{|key, value| [key.humanize, key]}, label: Gig.human_attribute_name(:gig_type) %>
+  <%= f.input :description, label: Gig.human_attribute_name(:description) %>
+  <%= f.input :price, label: Gig.human_attribute_name(:price) %>
+  <%= f.input :currency, collection: Gig.currencies.map { |key, value| [key.humanize, key] }, label: Gig.human_attribute_name(:currency) %>
+  <%= f.input :public, label: Gig.human_attribute_name(:public) %>
+  <%= f.submit "Spremi", class: "btn btn-primary" %>
 <% end %>
