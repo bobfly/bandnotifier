@@ -38,6 +38,7 @@ gem 'font-awesome-sass', '~> 5.5.0'
 # gem 'mini_magick', '~> 4.8'
 
 # Jobs
+gem 'redis', '~> 4.0'
 gem 'sidekiq'
 
 # Use Capistrano for deployment
