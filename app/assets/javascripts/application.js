@@ -17,7 +17,9 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap-datepicker
+//= require Chart.min
 //= require_tree .
+
 
 
 $(document).ready(function(){

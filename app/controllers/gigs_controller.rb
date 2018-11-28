@@ -2,12 +2,12 @@ class GigsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_gig, only: [:edit, :update, :show, :destroy]
   def index
-    @upcoming_gigs = Gig.where("gig_date >= ? and gig_date <= ?", Date.today, Date.today.end_of_year)
-    @next_gigs = Gig.where("gig_date > ?", Date.today.end_of_year)
+    @upcoming_gigs = Gig.where("gig_date >= ? and gig_date <= ?", Date.today, Date.today.end_of_year).order(gig_date: :desc)
+    @next_gigs = Gig.where("gig_date > ?", Date.today.end_of_year).order(gig_date: :desc)
   end
 
   def past_gigs
-    @past_gigs = Gig.where('gig_date < ?', Date.today)
+    @past_gigs = Gig.where('gig_date < ?', Date.today).order(gig_date: :desc)
   end
 
   def new

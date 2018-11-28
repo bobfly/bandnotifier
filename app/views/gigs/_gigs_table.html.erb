@@ -1,25 +1,22 @@
-<table class="table table-responsive">
+<table class="table table-striped table-responsive">
   <thead>
     <tr>
       <th>Datum</th>
       <th>Naslov</th>
-      <th>Opis</th>
       <th>Cijena</th>
       <th>Valuta</th>
       <th>Javna?</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <% gigs.each do |gig| %>
       <tr>
         <td>
-          <%= gig.gig_date.strftime("%-d.%-m.%Y.") %>
+          <%= link_to gig.gig_date.strftime("%-d.%-m.%Y."), gig_path(gig), remote: true %>
         </td>
         <td>
           <%= gig.name %>
-        </td>
-        <td>
-          <%= gig.description %>
         </td>
         <td>
           <%= gig.price %>
@@ -28,7 +25,10 @@
           <%= gig.currency %>
         </td>
         <td>
-          <%= gig.public %>
+          <%= gig.public == true ? "Da" : "Ne" %>
+        </td>
+        <td>
+          <%= link_to t("edit"), edit_gig_path(gig), class: "btn btn-primary" %>
         </td>
       </tr>
     <% end %>

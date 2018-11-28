@@ -1,0 +1,13 @@
+hr:
+  date:
+    month_names: ["Sijecanj", "Veljaca", "Ozujak", "Travanj", "Svibanj", "Lipanj", "Kolovoz", "Rujan", "Listopad", "Studeni", "Prosinac"]
+    order:
+      - :day
+      - :month
+      - :year
+  edit: Uredi
+  info: Info
+  activerecord:
+    attributes:
+      gig:
+        name: Naziv

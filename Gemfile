@@ -32,6 +32,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'devise_invitable'
 gem 'bootstrap-datepicker-rails'
+gem 'chartjs-ror'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
