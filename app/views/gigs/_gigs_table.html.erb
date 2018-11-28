@@ -29,6 +29,7 @@
         </td>
         <td>
           <%= link_to t("edit"), edit_gig_path(gig), class: "btn btn-primary" %>
+          <%= link_to t("destroy"), gig_path(gig), class: "btn btn-danger", method: :delete, data: {confirm: "Poslije njanjanja nema plakanja!"}%>
         </td>
       </tr>
     <% end %>

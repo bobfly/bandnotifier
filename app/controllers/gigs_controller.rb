@@ -40,6 +40,8 @@ class GigsController < ApplicationController
   end
 
   def destroy
+    @gig.destroy
+    redirect_to gigs_path
   end
 
   private
