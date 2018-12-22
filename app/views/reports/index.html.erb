@@ -1,13 +1,11 @@
 <div class="col-sm-12">
-  Pregled svirki po parametrima
-  <%= simple_form_for :search,  url: reports_path , :method => :get do |f| %>
-    <%= f.input :gig_type, collection: Gig.gig_types.map{|key, value| [key.humanize, key]} %>
-    <%= f.input :gig_date_greater, as: :date, value: params.dig(:search, :gig_date_greater) %>
-    <%= f.input :gig_date_smaller, as: :date, value: params.dig(:search, :gig_date_smaller) %>
-    <%= f.submit "Search", class: "btn btn-primary" %>
-  <% end %>
+  Pregled svirki po tipu i godinama
 </div>
 
-<div class="col-sm-12">
-  
-</div>
+
+<% @years.each do |y| %>
+  <div class="col-sm-12 col-lg-6">
+    <p><%= y %></p>
+    <%= column_chart Gig.where("extract(year from gig_date) = ?", y).group(:gig_type).count %>
+  </div>
+<% end %>

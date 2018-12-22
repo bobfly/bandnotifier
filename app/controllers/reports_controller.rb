@@ -1,13 +1,8 @@
 class ReportsController < ApplicationController
   def index
+    min_year = Gig.minimum(:gig_date).strftime("%Y").to_i
+    max_year = Gig.maximum(:gig_date).strftime("%Y").to_i
+    @years = [*min_year..max_year]
     @gigs = Gig.all
-    if params[:search]
-      unless params[:search][:gig_type].blank?
-      @gigs = @gigs.where(gig_type: params[:search][:gig_type])
-      end
-      if params[:search][:gig_date_greater] && params[:search][:gig_date_smaller]
-        @gigs = @gigs.where("gig_date >= ? and gig_date <= ?", params[:search][:gig_date_greater], params[:search][:gig_date_smaller])
-      end
-    end
   end
 end

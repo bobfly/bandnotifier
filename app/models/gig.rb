@@ -10,6 +10,11 @@ class Gig < ApplicationRecord
   validate :start_before_today
 
 
+  def year
+    self.gig_date.strftime('%Y')
+  end
+
+
   private
   def start_before_today
     return if self.gig_date.blank?
