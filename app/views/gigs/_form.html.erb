@@ -1,6 +1,6 @@
 <%= simple_form_for @gig do |f| %>
   <%= f.input :name, label: Gig.human_attribute_name(:name) %>
-  <%= f.input :gig_date, label: Gig.human_attribute_name(:gig_date) %>
+  <%= f.input :gig_date, as: :string, input_html: { type: "date"} %>
   <%= f.input :gig_type, collection: Gig.gig_types.map{|key, value| [key.humanize, key]}, label: Gig.human_attribute_name(:gig_type) %>
   <%= f.input :description, label: Gig.human_attribute_name(:description) %>
   <%= f.input :price, label: Gig.human_attribute_name(:price) %>
