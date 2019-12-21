@@ -19,6 +19,9 @@
         <%= link_to "Reports", reports_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
+        <%= link_to "Specijalne cijene", offers_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
         <% if current_user %>
           <%= link_to "Odjava", destroy_user_session_path, method: :delete, class: "nav-link" %>
         <% else %>
@@ -31,7 +34,7 @@
         </li>
       <% end %>
     </ul>
-    
+
     <ul></ul>
   </div>
 </nav>

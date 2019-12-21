@@ -5,4 +5,7 @@ class ReportsController < ApplicationController
     @years = [*min_year..max_year]
     @gigs = Gig.all
   end
+
+  def offers
+  end
 end
