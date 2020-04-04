@@ -7,6 +7,8 @@ class Gig < ApplicationRecord
   validates :gig_type, presence: true
   validates :price, presence: true
   validates :currency, presence: true
+  validates :contact_name, presence: true
+  validates :contact_number, presence: true
   validate :start_before_today
 
 

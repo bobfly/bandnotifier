@@ -3,6 +3,8 @@
   <%= f.input :gig_date, as: :string, input_html: { type: "date"} %>
   <%= f.input :gig_type, collection: Gig.gig_types.map{|key, value| [key.humanize, key]}, label: Gig.human_attribute_name(:gig_type) %>
   <%= f.input :description, label: Gig.human_attribute_name(:description) %>
+  <%= f.input :contact_name, label: Gig.human_attribute_name(:contact_name) %>
+  <%= f.input :contact_number, label: Gig.human_attribute_name(:contact_number) %>
   <%= f.input :price, label: Gig.human_attribute_name(:price) %>
   <%= f.input :currency, collection: Gig.currencies.map { |key, value| [key.humanize, key] }, label: Gig.human_attribute_name(:currency) %>
   <%= f.input :public, label: Gig.human_attribute_name(:public) %>
